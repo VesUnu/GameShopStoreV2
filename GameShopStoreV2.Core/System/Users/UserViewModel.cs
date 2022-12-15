@@ -23,7 +23,7 @@ namespace GameShopStoreV2.Core.System.Users
         public string Email { get; set; } = null!;
         [Display(Name = "Birth Date")]
         public DateTime BirthDate { get; set; }
-        public RoleAssignRequest RoleAssign { get; set; }
+        public RoleAssignRequest RoleAssign { get; set; } = null!;
         public IList<string> Roles { get; set; } = null!;
         public string AvatarPath { get; set; } = null!;
         public string ThumbnailPath { get; set; } = null!;
