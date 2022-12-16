@@ -8,11 +8,11 @@ namespace GameShopStoreV2.Data.Entities
 {
     public class Cart : BaseEntity
     {
-        public int CartID { get; set; }
-        public List<OrderedGame> OrderedGames { get; set; }
-        public AppUser AppUser { get; set; }
-        public Guid UserID { get; set; }
-        public Checkout Checkout { get; set; }
-        public int CheckoutID { get; set; }
+        public int CartId { get; set; }
+        public List<OrderedGame> OrderedGames { get; set; } = null!;
+        public AppUser AppUser { get; set; } = null!;
+        public Guid UserId { get; set; }
+        public Checkout Checkout { get; set; } = null!;
+        public int CheckoutId { get; set; }
     }
 }

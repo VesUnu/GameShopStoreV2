@@ -14,6 +14,6 @@ namespace GameShopStoreV2.Data.Entities
         public decimal TotalPrice { get; set; }
         public DateTime DatePurchased { get; set; }
         public string Username { get; set; } = null!;
-        public List<SoldGames> SoldGames { get; set; } = null!;
+        public List<SoldGame> SoldGames { get; set; } = null!;
     }
 }

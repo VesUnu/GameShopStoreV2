@@ -16,7 +16,7 @@ namespace GameShopStoreV2.Data.Entities
         public DateTime BirthDate { get; set; }
 
         public List<Cart> Carts { get; set; } = null!;
-        public Wishlist Wishlist { get; set; }
+        public Wishlist Wishlist { get; set; } = null!;
         public AvatarUser AvatarUser { get; set; } = null!;
         public ThumbnailUser ThumbnailUser { get; set; } = null!;
         public bool isConfirmed { get; set; }
