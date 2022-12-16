@@ -22,4 +22,12 @@
     <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="6.0.11" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Configs\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Enums\" />
+    <Folder Include="Migrations\" />
+    <Folder Include="EF\" />
+  </ItemGroup>
+
 </Project>
