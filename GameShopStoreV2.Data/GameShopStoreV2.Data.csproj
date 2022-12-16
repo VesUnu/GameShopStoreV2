@@ -25,7 +25,6 @@
   <ItemGroup>
     <Folder Include="Configs\" />
     <Folder Include="Extensions\" />
-    <Folder Include="Enums\" />
     <Folder Include="Migrations\" />
     <Folder Include="EF\" />
   </ItemGroup>
