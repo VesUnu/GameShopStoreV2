@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameShopStoreV2", "GameShopStoreV2\GameShopStoreV2.csproj", "{09F164CA-6B24-4B35-8169-651C09590205}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameShopStoreV2", "GameShopStoreV2\GameShopStoreV2.csproj", "{09F164CA-6B24-4B35-8169-651C09590205}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameShopStoreV2.Core", "GameShopStoreV2.Core\GameShopStoreV2.Core.csproj", "{CCA38E3F-D43F-4370-8F25-D9496C667900}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameShopStoreV2.Core", "GameShopStoreV2.Core\GameShopStoreV2.Core.csproj", "{CCA38E3F-D43F-4370-8F25-D9496C667900}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameShopStoreV2.Utilities", "GameShopStoreV2.Utilities\GameShopStoreV2.Utilities.csproj", "{33F5E462-D294-46A8-A73E-A1CC92C13B2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameShopStoreV2.Utilities", "GameShopStoreV2.Utilities\GameShopStoreV2.Utilities.csproj", "{33F5E462-D294-46A8-A73E-A1CC92C13B2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameShopStoreV2.Data", "GameShopStoreV2.Data\GameShopStoreV2.Data.csproj", "{41B33A02-92EF-49FC-B4AA-907E9BE4B609}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{33F5E462-D294-46A8-A73E-A1CC92C13B2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33F5E462-D294-46A8-A73E-A1CC92C13B2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33F5E462-D294-46A8-A73E-A1CC92C13B2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41B33A02-92EF-49FC-B4AA-907E9BE4B609}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41B33A02-92EF-49FC-B4AA-907E9BE4B609}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41B33A02-92EF-49FC-B4AA-907E9BE4B609}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41B33A02-92EF-49FC-B4AA-907E9BE4B609}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
