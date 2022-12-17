@@ -11,6 +11,6 @@
         public string AdditionalNotes { get; set; } = null!;
         public Game Game { get; set; } = null!;
         public int GameId { get; set; }
-        public string Soundcard { get; set; } = null!;
+        public string SoundCard { get; set; } = null!;
     }
 }
