@@ -18,4 +18,11 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GameShopStoreV2.Application\GameShopStoreV2.Application.csproj" />
+    <ProjectReference Include="..\GameShopStoreV2.Core\GameShopStoreV2.Core.csproj" />
+    <ProjectReference Include="..\GameShopStoreV2.Data\GameShopStoreV2.Data.csproj" />
+    <ProjectReference Include="..\GameShopStoreV2.Utilities\GameShopStoreV2.Utilities.csproj" />
+  </ItemGroup>
+
 </Project>
