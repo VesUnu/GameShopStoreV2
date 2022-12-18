@@ -17,8 +17,4 @@
     <ProjectReference Include="..\GameShopStoreV2.Utilities\GameShopStoreV2.Utilities.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="SystemServices\RoleServices\" />
-  </ItemGroup>
-
 </Project>
