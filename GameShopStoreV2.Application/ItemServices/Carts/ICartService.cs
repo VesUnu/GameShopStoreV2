@@ -10,10 +10,10 @@ namespace GameShopStoreV2.Application.ItemServices.Carts
 {
     public interface ICartService
     {
-        Task<ResultApi<bool>> AddToCart(string UserID, CreateCart cartCreateRequest);
+        Task<ResultApi<bool>> AddToCart(string UserId, CreateCart cartCreateRequest);
 
-        Task<ResultApi<List<ResponseOrderedItem>>> GetCart(string UserID);
+        Task<ResultApi<List<ResponseOrderedItem>>> GetCart(string UserId);
 
-        Task<ResultApi<bool>> DeleteItem(string UserID, DeleteOrderedItem orderItemDelete);
+        Task<ResultApi<bool>> DeleteItem(string UserId, DeleteOrderedItem orderItemDelete);
     }
 }

@@ -8,7 +8,7 @@ namespace GameShopStoreV2.Data.Entities
 {
     public class Genre
     {
-        public int GenreID { get; set; }
+        public int GenreId { get; set; }
         public string GenreName { get; set; } = null!;
         public List<GameGenre> GameGenres { get; set; } = null!;
     }
