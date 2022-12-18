@@ -10,6 +10,6 @@ namespace GameShopStoreV2.Core.Items.Games
     public class ManageGamePagingRequest : BasePagingRequest
     {
         public string Keyword { get; set; } = null!;
-        public int? GenreID { get; set; }
+        public int? GenreId { get; set; }
     }
 }
