@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace GameShopStoreV2.Data.Configs
 {
-    public class WishesGamesConfig : IEntityTypeConfiguration<WishesGame>
+    public class WishesGameConfig : IEntityTypeConfiguration<WishesGame>
     {
         public void Configure(EntityTypeBuilder<WishesGame> builder)
         {
