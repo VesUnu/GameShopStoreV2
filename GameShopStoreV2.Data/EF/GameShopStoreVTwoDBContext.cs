@@ -50,6 +50,20 @@ namespace GameShopStoreV2.Data.EF
             modelBuilder.Seed();
         }
 
-
+        public DbSet<GameGenre> GameGenres { get; set; } = null!;
+        public DbSet<Game> Games { get; set; } = null!;
+        public DbSet<Genre> Genres { get; set; } = null!;
+        public DbSet<MinSystemRequirement> MinSystemRequirements { get; set; } = null!;
+        public DbSet<RecommendSystemRequirement> RecommendSystemRequirements { get; set; } = null!;
+        public DbSet<GameImage> GameImages { get; set; } = null!;
+        public DbSet<OrderedGame> OrderedGames { get; set; } = null!;
+        public DbSet<Cart> Carts { get; set; } = null!;
+        public DbSet<Wishlist> Wishlists { get; set; } = null!;
+        public DbSet<WishesGame> WishesGames { get; set; } = null!;
+        public DbSet<Checkout> Checkouts { get; set; } = null!;
+        public DbSet<Contact> Contacts { get; set; } = null!;
+        public DbSet<AvatarUser> AvatarUsers { get; set; } = null!;
+        public DbSet<ThumbnailUser> ThumbnailUsers { get; set; } = null!;
+        public DbSet<SoldGame> SoldGames { get; set; } = null!;
     }
 }
