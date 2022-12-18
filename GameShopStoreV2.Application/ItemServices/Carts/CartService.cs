@@ -137,7 +137,7 @@ namespace GameShopStoreV2.Application.ItemServices.Carts
                 foreach (var genre in item.GenreIds)
                 {
                     var name = genres.Where(x => x.GenreId == genre).Select(y => y.GenreName).FirstOrDefault();
-                    item.GenreName.Add(name);
+                    item.GenreName.Add(name = null!);
                 }
             }
             var thumbnailimage = _context.GameImages.AsQueryable();

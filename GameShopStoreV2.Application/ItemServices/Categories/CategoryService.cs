@@ -78,7 +78,7 @@ namespace GameShopStoreV2.Application.ItemServices.Categories
             }
             else
             {
-                return null;
+                return null!;
             }
         }
     }
