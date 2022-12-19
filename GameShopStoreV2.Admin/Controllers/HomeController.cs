@@ -1,4 +1,5 @@
 ﻿using GameShopStoreV2.Admin.Models;
+using GameShopStoreV2.Admin.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
