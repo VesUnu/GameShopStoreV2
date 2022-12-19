@@ -8,7 +8,7 @@ namespace GameShopStoreV2.Utilities.Constants
 {
     public class SystemConstant
     {
-        public const string MainConnectionString = "GameShopStoreV2Database";
+        public const string MainConnectionString = "GameShopStoreDatabase";
         public class ApplicationSettings 
         {
             public const string Token = "Token";
