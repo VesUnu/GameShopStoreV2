@@ -46,7 +46,7 @@ namespace GameShopStoreV2.Controllers
             }
         }
 
-        [HttpDelete("UserID")]
+        [HttpDelete("UserId")]
         public async Task<IActionResult> DeleteItem(string UserID, [FromBody] DeleteOrderedItem orderItemDelete)
         {
             if (!ModelState.IsValid)
