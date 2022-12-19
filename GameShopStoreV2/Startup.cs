@@ -1,18 +1,24 @@
+using FluentValidation.AspNetCore;
 using GameShopStoreV2.Application.CommonServices;
 using GameShopStoreV2.Application.ItemServices.Carts;
 using GameShopStoreV2.Application.ItemServices.Categories;
 using GameShopStoreV2.Application.ItemServices.Checkouts;
 using GameShopStoreV2.Application.ItemServices.Contacts;
 using GameShopStoreV2.Application.ItemServices.Games;
+using GameShopStoreV2.Application.ItemServices.Stats;
 using GameShopStoreV2.Application.ItemServices.Wishlists;
 using GameShopStoreV2.Application.SystemServices.RoleServices;
 using GameShopStoreV2.Application.SystemServices.UserServices;
+using GameShopStoreV2.Core.System.Users;
 using GameShopStoreV2.Data;
 using GameShopStoreV2.Data.EF;
 using GameShopStoreV2.Data.Entities;
 using GameShopStoreV2.Utilities.Constants;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 
 namespace GameShopStoreV2
 {
@@ -45,10 +51,10 @@ namespace GameShopStoreV2
             services.AddTransient<IWishlistService, WishlistService>();
             services.AddTransient<ICheckoutService, CheckoutService>();
             services.AddTransient<IContactService, ContactService>();
-            services.AddTransient<IStatsService, ChartService>();
+            services.AddTransient<IStatsService, StatsService>();
             //services.AddTransient<IValidator<LoginRequest>, LoginRequestValidator>();
             services.AddControllers()
-             .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<LoginRequestValidator>());
+             .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<LoginRequest>());
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Swagger GameShop Api", Version = "v1" });
