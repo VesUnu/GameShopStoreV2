@@ -57,7 +57,7 @@ namespace GameShopStoreV2
              .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<LoginRequest>());
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Swagger GameShop Api", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Swagger GameShopStoreV2 Api", Version = "v1" });
 
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
@@ -137,7 +137,7 @@ namespace GameShopStoreV2
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger GameShop Api V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger GameShopStoreV2 Api V1");
             });
 
             app.UseEndpoints(endpoints =>
