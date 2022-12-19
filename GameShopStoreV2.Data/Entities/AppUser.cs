@@ -19,7 +19,7 @@ namespace GameShopStoreV2.Data.Entities
         public Wishlist Wishlist { get; set; } = null!;
         public AvatarUser AvatarUser { get; set; } = null!;
         public ThumbnailUser ThumbnailUser { get; set; } = null!;
-        public bool isConfirmed { get; set; }
+        public bool IsConfirmed { get; set; }
         public string CodeConfirm { get; set; } = null!;
     }
 }

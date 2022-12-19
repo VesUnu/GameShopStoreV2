@@ -141,7 +141,7 @@ namespace GameShopStoreV2.Application.SystemServices.UserServices
                 Email = request.Email,
                 AvatarUser = useravatar,
                 ThumbnailUser = userthumbnail,
-                isConfirmed = true,
+                IsConfirmed = true,
                 CodeConfirm = sixDigitNumber,
             };
 
@@ -171,7 +171,7 @@ namespace GameShopStoreV2.Application.SystemServices.UserServices
             }
             else
             {
-                if (user.isConfirmed == false)
+                if (user.IsConfirmed == false)
                 {
                     await _signInManager.SignOutAsync();
                     return new ErrorResultApi<LoginResponse>("This account doesn't exist");
@@ -197,7 +197,7 @@ namespace GameShopStoreV2.Application.SystemServices.UserServices
             LoginResponse response = new LoginResponse()
             {
                 UserId = user.Id.ToString(),
-                isConfirmed = user.isConfirmed,
+                IsConfirmed = user.IsConfirmed,
                 Token = new JwtSecurityTokenHandler().WriteToken(token)
             };
             return new SuccessResultApi<LoginResponse>(response);
@@ -245,9 +245,9 @@ namespace GameShopStoreV2.Application.SystemServices.UserServices
                 {
                     if (user.CodeConfirm == request.CodeConfirm)
                     {
-                        if (user.isConfirmed == false)
+                        if (user.IsConfirmed == false)
                         {
-                            user.isConfirmed = true;
+                            user.IsConfirmed = true;
 
                             var result = await _userManager.UpdateAsync(user);
                             if (result.Succeeded)
@@ -397,7 +397,7 @@ namespace GameShopStoreV2.Application.SystemServices.UserServices
                 Email = request.Email,
                 AvatarUser = useravatar,
                 ThumbnailUser = userthumbnail,
-                isConfirmed = false,
+                IsConfirmed = false,
                 CodeConfirm = sixDigitNumber
             };
 

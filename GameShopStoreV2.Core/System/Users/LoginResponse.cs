@@ -10,6 +10,6 @@ namespace GameShopStoreV2.Core.System.Users
     {
         public string UserId { get; set; } = null!;
         public string Token { get; set; } = null!;
-        public bool isConfirmed { get; set; }
+        public bool IsConfirmed { get; set; }
     }
 }
