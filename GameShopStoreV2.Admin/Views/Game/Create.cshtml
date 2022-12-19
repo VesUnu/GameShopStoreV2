@@ -1,0 +1,179 @@
+﻿@model GameShopStoreV2.Core.Items.Games.CreatedGameRequest
+
+@{
+    ViewData["Title"] = "Create a product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts{
+    <script src="https://cdn.ckeditor.com/ckeditor5/21.0.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#txt_details'), {
+                // toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
+            })
+            .then(editor => {
+                window.editor = editor;
+            })
+            .catch(err => {
+                console.error(err.stack);
+            });
+    </script>
+}
+    <div class="container-fluid">
+        <h1 class="mt-4">Create a new user</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="/">Home page</a></li>
+            <li class="breadcrumb-item active">Create a new product</li>
+        </ol>
+        <div class="card mb-4">
+            <div class="card-header">
+                <a class="btn btn-success" asp-action="Index" asp-controller="User">About the list</a>
+            </div>
+
+            <div class="card-body">
+                <div class="col-md-8">
+                    <form asp-action="Create" enctype="multipart/form-data" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="GameName" class="control-label"></label>
+                            <input asp-for="GameName" class="form-control" />
+                            <span asp-validation-for="GameName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Publisher" class="control-label"></label>
+                            <input asp-for="Publisher" class="form-control" />
+                            <span asp-validation-for="Publisher" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Price" class="control-label"></label>
+                            <input asp-for="Price" type="number" class="form-control" />
+                            <span asp-validation-for="Price" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Discount" class="control-label"></label>
+                            <input asp-for="Discount" type="number" class="form-control" />
+                            <span asp-validation-for="Discount" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Description" class="control-label"></label>
+                            <input asp-for="Description" class="form-control" />
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <select name="GenreId" asp-items="@ViewBag.Categories" class="form-control">
+                                <option>--Chọn danh mục--</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Gameplay" class="control-label"></label>
+                            <textarea asp-for="Gameplay" class="form-control" rows="10"></textarea>
+                            <span asp-validation-for="Gameplay" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <select name="Status" class="form-control">
+                                <option>--Chọn danh mục--</option>
+                                <option value="1">Active</option>
+                                <option value="0">InActive</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="ThumbnailImage" class="control-label"></label>
+                            <input asp-for="ThumbnailImage" type="file" class="form-control" />
+                            <span asp-validation-for="ThumbnailImage" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="FileGame" class="control-label"></label>
+                            <input asp-for="FileGame" type="file" class="form-control" />
+                            <span asp-validation-for="FileGame" class="text-danger"></span>
+                        </div>
+                        <div> 
+                            <span style="color: blue">System Requirement Minimum </span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SystemRequireMin.OS" class="control-label"></label>
+                            <input asp-for="SystemRequireMin.OS" class="form-control" />
+                            <span asp-validation-for="SystemRequireMin.OS" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SystemRequireMin.Processor" class="control-label"></label>
+                            <input asp-for="SystemRequireMin.Processor" class="form-control" />
+                            <span asp-validation-for="SystemRequireMin.Processor" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SystemRequireMin.Memory" class="control-label"></label>
+                            <input asp-for="SystemRequireMin.Memory" class="form-control" />
+                            <span asp-validation-for="SystemRequireMin.Memory" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SystemRequireMin.Graphics" class="control-label"></label>
+                            <input asp-for="SystemRequireMin.Graphics"  class="form-control" />
+                            <span asp-validation-for="SystemRequireMin.Graphics" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SystemRequireMin.Storage" class="control-label"></label>
+                            <input asp-for="SystemRequireMin.Storage" class="form-control" />
+                            <span asp-validation-for="SystemRequireMin.Storage" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SystemRequireMin.AdditionalNotes" class="control-label"></label>
+                            <input asp-for="SystemRequireMin.AdditionalNotes"  class="form-control" />
+                            <span asp-validation-for="SystemRequireMin.AdditionalNotes" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SystemRequireMin.Soundcard" class="control-label"></label>
+                            <input asp-for="SystemRequireMin.Soundcard"  class="form-control" />
+                            <span asp-validation-for="SystemRequireMin.Soundcard" class="text-danger"></span>
+                        </div>
+                        <div>
+                            <span style="color: blue">System Requirement Recommended</span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SystemRequiredRecommend.OS" class="control-label"></label>
+                            <input asp-for="SystemRequiredRecommend.OS"  class="form-control" />
+                            <span asp-validation-for="SystemRequiredRecommend.OS" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SystemRequiredRecommend.Processor" class="control-label"></label>
+                            <input asp-for="SystemRequiredRecommend.Processor"  class="form-control" />
+                            <span asp-validation-for="SystemRequiredRecommend.Processor" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SystemRequiredRecommend.Memory" class="control-label"></label>
+                            <input asp-for="SystemRequiredRecommend.Memory"  class="form-control" />
+                            <span asp-validation-for="SystemRequiredRecommend.Memory" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SystemRequiredRecommend.Graphics" class="control-label"></label>
+                            <input asp-for="SystemRequiredRecommend.Graphics"  class="form-control" />
+                            <span asp-validation-for="SystemRequiredRecommend.Graphics" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SystemRequiredRecommend.Storage" class="control-label"></label>
+                            <input asp-for="SystemRequiredRecommend.Storage"  class="form-control" />
+                            <span asp-validation-for="SystemRequiredRecommend.Storage" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SystemRequiredRecommend.AdditionalNotes" class="control-label"></label>
+                            <input asp-for="SystemRequiredRecommend.AdditionalNotes"  class="form-control" />
+                            <span asp-validation-for="SystemRequiredRecommend.AdditionalNotes" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SystemRequiredRecommend.Soundcard" class="control-label"></label>
+                            <input asp-for="SystemRequiredRecommend.Soundcard" class="form-control" />
+                            <span asp-validation-for="SystemRequiredRecommend.Soundcard" class="text-danger"></span>
+                        </div>
+                       @* <div class="form-group">
+                            <label asp-for="Gameplay" class="control-label"></label>
+                            <textarea id="txt_details" asp-for="Gameplay" rows="15" class="form-control"></textarea>
+                            <span asp-validation-for="Gameplay" class="text-danger"></span>
+                        </div>*@
+                        
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

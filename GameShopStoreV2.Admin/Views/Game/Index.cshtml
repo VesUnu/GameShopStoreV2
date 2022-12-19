@@ -1,0 +1,156 @@
+﻿@using GameShopStoreV2.Core.Common
+@model PagedResult<GameShopStoreV2.Core.Items.Games.GameViewModel>
+
+@{
+    ViewData["Title"] = "List of products";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts{
+    <script>
+        setTimeout(function () {
+            $('#msgAlert').fadeOut('slow');
+        }, 2000);
+    </script>
+}
+<div class="container-fluid">
+    <h1 class="mt-4">List of products</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/">Home page</a></li>
+        <li class="breadcrumb-item active">Danh sách sản phẩm</li>
+    </ol>
+    <div class="card mb-12">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <a class="btn btn-success" asp-action="Create" asp-controller="Game">Create new</a>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <form asp-action="Index" method="get">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <input type="text" value="@ViewBag.Keyword" name="keyword" class="form-control" />
+                            </div>
+                            <div class="col-md-4">
+                                    <select name="GenreId"  onchange ="this.form.submit()" asp-items="@ViewBag.Categories" class="form-control">
+                                    <option>--Select a category--</option>
+                                </select>
+                            </div>
+                            <div class="cold-md-3">
+                                <button type="submit" class="btn btn-primary">Tìm</button>
+                                <button type="button" onclick="window.location.href='/Game/Index'" class="btn btn-dark">Reset</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+                @if (ViewBag.SuccessMsg != null)
+                {
+                    <div id="msgAlert" class="alert alert-success" role="alert">
+                        @ViewBag.SuccessMsg
+                    </div>
+                }
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                Game code
+                            </th>
+                            <th>
+                                Game Name
+                            </th>
+                            <th>
+                                Publisher
+                            </th>
+                            <th>
+                                Price
+                            </th>
+                            <th>
+                                Discount
+                            </th>
+                            <th>
+                               Detail
+                            </th>
+                            <th>
+                                Gameplay
+                            </th>
+                           
+                            <th>
+                               Category
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                            <th>
+                                DateCreated
+                            </th>
+                            <th>
+                                DateUpdated
+                            </th>
+
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Items)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.GameId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                 <td>
+                                    @Html.DisplayFor(modelItem => item.Publisher)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Price)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Discount)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Gameplay)
+                                </td>
+                                <td>
+                                    @foreach(var genre in item.GenreName){
+                                        @Html.DisplayFor(modelItem => genre) <text> ,</text>
+                                        
+
+                                    }
+                                   
+                                </td>
+                                 <td>
+                                    @Html.DisplayFor(modelItem => item.Status)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DateUpdated)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DateCreated)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Fix", "Edit", new { id = item.GameId}) |
+                                    @Html.ActionLink("Info", "Details", new { id = item.GameId }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.GameId }) |
+                                    @Html.ActionLink("Add an image", "AddImage", new { id = item.GameId }) |
+                                    @Html.ActionLink("Status", "CategoryAssign", new { id = item.GameId }) |
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            @await Component.InvokeAsync("Pager", Model)
+        </div>
+    </div>
+</div>
